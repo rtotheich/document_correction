@@ -2,7 +2,7 @@
 # Takes in a document missing a definite article or preposition and makes suggestions for each sentence
 
 # Imports python-docx
-DOCPATH = "C:\\Users\\rtoth\\OneDrive\\2023\\Research Assistantship\\document_improvement\\Original.docx"
+DOCPATH = "C:\\Original.docx"
 
 from docx import Document
 
@@ -187,7 +187,7 @@ def preposition_suggestion(sentence):
 def compare_docs():
     import win32com.client
 
-    path = "C:\\Users\\rtoth\\OneDrive\\2023\\Research Assistantship\\document_improvement\\"
+    path = "C:\\"
     # note the \\ at the end of the path name to prevent a SyntaxError
 
     #Create the Application word
@@ -210,7 +210,7 @@ def main():
         source_text.append(para.text)
     for para in source_text:
         article_suggestion(para, ['the'], target_document)
-    target_document.save('C:\\Users\\rtoth\\OneDrive\\2023\\Research Assistantship\\document_improvement\\Revised.docx')
+    target_document.save('C:\\Revised.docx')
     compare_docs()
     
 
